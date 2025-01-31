@@ -1,25 +1,26 @@
-![Chimelo Logo](chimelo-logo.png?raw=true "Title")
+![Git Reflect Logo](git-reflect-logo.png?raw=true "Title")
 
-# Chimelo
+# Git Reflect
 
-Chimelo is a TikTok-inspired web application that allows users to engage with various media types, including audio, video, images, and applications, while earning points through interactions. Built with a focus on a seamless and interactive user experience, Chimelo integrates gamification elements to enhance user engagement.
+Git Reflect is a web application that listens to Git pushes and allows users to attach commit IDs/SHAs to their journal. It combines task management and journaling with GitHub API integrations, offering a structured way to track development progress and reflections.
 
 ## Features
-- **Multi-Media Support**: Upload and interact with different media types, including short/long videos, audio, images, and applications.
-- **Gamification**: Earn points for interactions and unlock content.
-- **Real-Time Updates**: Experience real-time interactions powered by WebSockets.
+- **Commit-Linked Journaling**: Attach commit IDs/SHAs to journal entries to track progress.
+- **Task Management**: Organize tasks with Git integration to streamline development workflows.
+- **GitHub API Integration**: Seamlessly pull commit data from GitHub.
+- **Real-Time Updates**: Experience instant updates using WebSockets.
 - **Secure Authentication**: User management and authentication through Amazon Cognito.
-- **Content Delivery**: Fast and reliable content delivery using CloudFront CDN.
+- **Cloud-Based Storage**: Fast and reliable data management using AWS services.
 - **TailwindCSS (Utility-First Styling)**: Responsive and maintainable UI.
 - **TypeScript**: Ensuring better type safety and maintainability.
 
 ## Tech Stack
-- **Frontend**: 
+- **Frontend**:
   - React
   - TypeScript
   - TailwindCSS
   
-- **Backend**: 
+- **Backend**:
   - Node.js
   - Express
   
@@ -27,7 +28,6 @@ Chimelo is a TikTok-inspired web application that allows users to engage with va
   - ECS (Elastic Container Service) for container orchestration
   - ECR (Elastic Container Registry) for Docker image storage
   - RDS (Relational Database Service) for data persistence
-  - S3 for media storage
   - CloudFront for content delivery
   - Route 53 for DNS management
   - Cognito for user authentication and management
@@ -35,7 +35,7 @@ Chimelo is a TikTok-inspired web application that allows users to engage with va
   - VPC for networking and security
   - CloudWatch for monitoring and logging
 
-- **Infrastructure as Code**: 
+- **Infrastructure as Code**:
   - Terraform for AWS resource management
 
 ## Installation
@@ -50,8 +50,8 @@ Chimelo is a TikTok-inspired web application that allows users to engage with va
 ### Setup
 ```sh
 # Clone the repository
-git clone https://github.com/your-repo/chimelo.git
-cd chimelo
+git clone https://github.com/your-repo/git-reflect.git
+cd git-reflect
 
 # Install dependencies
 yarn install # or npm install
@@ -66,3 +66,4 @@ terraform apply
 
 # Start the development server
 yarn dev # or npm run dev
+
