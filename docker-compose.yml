@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./frontend/Dockerfile.frontend
+      target: ${DOCKER_TARGET:-development}
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./backend/Dockerfile.backend
+      target: ${DOCKER_TARGET:-development}
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=${DOCKER_TARGET:-development}
+      - DATABASE_URL=postgres://admin:password123@db:5432/pikpok_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: pikpok_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
